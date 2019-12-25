@@ -1,0 +1,26 @@
+{
+  "name": "vue-loading",
+  "version": "0.1.0",
+  "private": false,
+  "main":"dist/vue-loading.common.js",
+  "unpkg": "./dist/vue-loading.umd.min.js",
+  "jsdelivr": "./dist/vue-loading.umd.min.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib ./src/plugin/loading.js"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^4.1.0",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
