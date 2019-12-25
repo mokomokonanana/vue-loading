@@ -2,7 +2,7 @@
   "name": "vue-loading",
   "version": "0.1.0",
   "private": false,
-  "main":"dist/vue-loading.common.js",
+  "main": "dist/vue-loading.common.js",
   "unpkg": "./dist/vue-loading.umd.min.js",
   "jsdelivr": "./dist/vue-loading.umd.min.js",
   "files": [
@@ -16,6 +16,7 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.1.1",
     "@vue/cli-service": "^4.1.0",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
