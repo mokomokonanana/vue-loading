@@ -1,14 +1,7 @@
 <template lang="pug">
   .loading(v-if="count > 0")
     div
-      span
-      span
-      span
-      span
-      span
-      span
-      span
-      span
+      span(v-for="n in 8")
 </template>
 
 <script>
