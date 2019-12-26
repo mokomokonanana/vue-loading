@@ -4,6 +4,7 @@
     button(@click="double") double
     button(@click="betweenAdd") between add
     input(type="text" @click="single")
+    button(@click="$loading.show()") show
 </template>
 
 <script>
@@ -35,6 +36,10 @@ export default {
 }
 </script>
 <style lang="stylus">
+  #app
+    width 500px
+    height 500px
+    outline 2px solid black
   *:focus
     outline 2px solid red
     border 2px solid red
