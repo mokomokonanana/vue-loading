@@ -18,13 +18,26 @@
         count: 0
       }
     },
+    created(){
+      document.addEventListener('keydown', this.keydown, {passive: false})
+    },
+    destroyed(){
+      document.removeEventListener('keydown', this.keydown)
+    },
     methods: {
+      keydown(e){
+        if(this.count < 1) return
+        e.stopPropagation()
+        e.preventDefault()
+        return false
+      },
       show() {
         document.body.appendChild(this.$el) // 一番最後に表示
         this.count++
       },
       hide(){
         if(this.count > 0) this.count--
+
       }
     }
   }

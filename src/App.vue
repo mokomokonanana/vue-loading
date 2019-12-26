@@ -3,6 +3,7 @@
     button(@click="single") single
     button(@click="double") double
     button(@click="betweenAdd") between add
+    input(type="text" @click="single")
 </template>
 
 <script>
@@ -33,3 +34,9 @@ export default {
   }
 }
 </script>
+<style lang="stylus">
+  *:focus
+    outline 2px solid red
+    border 2px solid red
+    color red 
+</style>
