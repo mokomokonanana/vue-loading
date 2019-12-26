@@ -30,7 +30,6 @@
       },
       hide(){
         if(this.count > 0) this.count--
-
       }
     }
   }
@@ -38,57 +37,36 @@
 
 <style scoped lang="stylus">
   .loading
-    z-index 1
     top 0
     bottom 0
     left 0
     right 0
     position fixed
     background-color #0000004D
-    >div
-      position absolute
-      left 50%
-      top 50%
-      transform translate(-50%, -50%)
-      width 100px
-      height 100px
-      background-color #00000000
-      >span
-        width 50%
-        height 20px
+    display flex
+    align-items center
+    justify-content center
+    > div
+      animation spinner 1s steps(8, end) infinite
+      @keyframes spinner
+        0% 
+          transform rotate(0deg)
+        100%
+          transform rotate(360deg)
+      > span
         position absolute
-        top calc(50% - 10px)
-        transform-origin 100% 50%
-        left 0
-        &::before
+        height 100px
+        &:before
           content ''
           display block
-          width 20px
-          height 20px
           border-radius 50%
           background-color #333
-          position absolute
-          left 0
-          top 50%
-          transform translateY(-50%)
-        &:nth-child(1)::before
-          animation spinner 1s linear 0s infinite
-        for num in (2..8)
-          &:nth-child({num})
-            transform rotate((45*(num - 1))deg)
-            &::before 
-              animation spinner 1s linear (-0.125*(num - 1))s infinite
-@keyframes spinner {
-  0% {
-    width: 20px;
-    height: 20px;
-    opacity: 1;
-  }
-  100% {
-    width: 6px;
-    height: 6px;
-    opacity: .2;
-    margin-left: 7px;
-  }
-}
+        for num in (0..8)
+          &:nth-child({num + 1})
+            transform translate(-50%, -50%) rotate((360deg / 8) * num)
+            &:before
+              width ((20px - 6px) / 7 * num + 6px)
+              height @width
+              margin-top ((20px - @width) / 2)
+              opacity ((1 - 0.2) / 7 * num) + 0.2
 </style>
